@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+                Intent intent = new Intent(MainActivity.this, AdminLogin.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         buttonVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, VoteActivity.class);
+                Intent intent = new Intent(MainActivity.this, VoterLogin.class);
                 startActivity(intent);
                 finish();
             }
