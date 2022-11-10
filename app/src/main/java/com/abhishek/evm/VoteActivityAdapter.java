@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -39,12 +41,17 @@ public class VoteActivityAdapter extends FirebaseRecyclerAdapter<DataModel, Vote
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("Election").child("1").child("candidates").child(Integer.toString(1 + holder.getAbsoluteAdapterPosition()));
-                myRef.child("votes").setValue(Integer.toString(updateCount));
+                myRef.child("votes").setValue(Integer.toString(updateCount)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Intent intent = new Intent(view.getContext(), VoteSucess.class);
+                        intent.putExtra("key", model.getName());
+                        context.startActivity(intent);
 
-                Intent intent = new Intent(view.getContext(), VoteSucess.class);
-                intent.putExtra("key", model.getName());
-                context.startActivity(intent);
-                ((Activity)view.getContext()).finish();
+
+                    }
+                });
+
 
 
 

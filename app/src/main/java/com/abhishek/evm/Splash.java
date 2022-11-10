@@ -25,7 +25,7 @@ public class Splash extends AppCompatActivity {
                 finish();
 
             }
-        }, 1500);
+        }, 1000);
 
         Objects.requireNonNull(getSupportActionBar()).hide();
 
