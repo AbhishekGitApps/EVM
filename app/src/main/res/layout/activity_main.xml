@@ -12,13 +12,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        app:cardElevation="16dp"
         app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <Button
+                android:id="@+id/adminButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Admin"
+                android:layout_marginBottom="16dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/voteButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vote"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 
@@ -29,30 +53,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="-82dp"
-        tools:layout_editor_absoluteY="301dp">
-
-
-        <Button
-            android:id="@+id/adminButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Admin"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <Button
-            android:id="@+id/voteButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vote"
-            tools:layout_editor_absoluteX="0dp" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
