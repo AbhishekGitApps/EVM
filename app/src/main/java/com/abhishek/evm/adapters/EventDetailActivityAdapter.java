@@ -1,24 +1,23 @@
-package com.abhishek.evm;
+package com.abhishek.evm.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abhishek.evm.DataModel;
+import com.abhishek.evm.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class ResultActivityAdapter extends FirebaseRecyclerAdapter<DataModel, ResultActivityAdapter.myviewholder> {
+public class EventDetailActivityAdapter extends FirebaseRecyclerAdapter<DataModel, EventDetailActivityAdapter.myviewholder> {
     private Context context;
 
-    public ResultActivityAdapter(Context context, @NonNull FirebaseRecyclerOptions<DataModel> options) {
+    public EventDetailActivityAdapter(Context context, @NonNull FirebaseRecyclerOptions<DataModel> options) {
         super(options);
         this.context = context;
     }
@@ -27,14 +26,23 @@ public class ResultActivityAdapter extends FirebaseRecyclerAdapter<DataModel, Re
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull DataModel model) {
 
         holder.name.setText(model.getName());
-        holder.vote.setText(model.getVotes());
+//        holder.vote.setText(model.getVotes());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), VoteSucess.class);
+//                intent.putExtra("key", model.getName());
+//                context.startActivity(intent);
+
+            }
+        });
     }
 
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.result_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.events_layout, parent, false);
         return new myviewholder(view);
     }
 

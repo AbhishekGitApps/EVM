@@ -1,11 +1,13 @@
-package com.abhishek.evm;
+package com.abhishek.evm.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class VoteSucess extends AppCompatActivity {
+import com.abhishek.evm.R;
+
+public class VoteSucessActivity extends AppCompatActivity {
     TextView text;
 
     @Override

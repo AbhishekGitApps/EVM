@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
-    tools:context=".AdminActivity">
+    tools:context=".activity.AdminActivity">
 
     <Button
         android:id="@+id/result_button"
@@ -15,4 +15,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="89dp" />
+
+    <Button
+        android:id="@+id/event_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Events"
+        app:layout_constraintBottom_toTopOf="@+id/result_button" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
